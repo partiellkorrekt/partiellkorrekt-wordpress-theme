@@ -8,6 +8,7 @@ This theme is derived from the [Timber Starter Theme](https://github.com/timber/
 Install this theme as you would any other, and be sure the Timber plugin is activated. But hey, let's break it down into some bullets:
 
 1. Make sure you have installed the plugin for the [Timber Library](https://wordpress.org/plugins/timber-library/)
-2. Download the zip for this theme (or clone it) and move it to `wp-content/themes` in your WordPress installation.
+2. Optionally install [gutenberg-advanced-code](https://github.com/partiellkorrekt/gutenberg-advanced-code)
+3. Download the zip for this theme (or clone it) and move it to `wp-content/themes` in your WordPress installation.
 4. Activate the theme in Appearance >  Themes.
 5. Do your thing!
