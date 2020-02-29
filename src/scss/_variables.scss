@@ -1,0 +1,16 @@
+$enable-shadows: true;
+$enable-gradients: true;
+$yiq-contrasted-threshold:  200 !default;
+
+$primary:#107cd1;
+$success:#399f78;
+$danger:#f44336;
+$info:#191c25;
+$warning:#b68f40;
+$secondary:#4D5F81;
+$light:#EFF0F0;
+$dark:#191C25;
+
+$body-color: $secondary;
+$headings-color: $dark;
+$line-height-base: 1.75;

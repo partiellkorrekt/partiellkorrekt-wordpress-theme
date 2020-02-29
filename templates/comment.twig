@@ -1,0 +1,53 @@
+<div class="comment mb-3 {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
+	<div class="row no-gutters">
+		<div class="col" style="flex: 0 0 90px">
+			<figure class="">
+				<img class="img-thumbnail" src="{{comment.avatar(512)}}">
+
+			</figure>
+		</div>
+		<div class="col">
+			<div class="ml-3">
+				<h6 class="mb-0">
+					<strong>{{comment.author.name}}</strong>
+					says:
+				</h6>
+				<div class="content comment-content">{{comment.comment_content|wpautop}}</div>
+				{% if not comment.children %}
+					<a href="#" data-toggle="collapse" data-target="#comment-form-{{ comment.ID }}" aria-expanded="false" aria-controls="comment-form-{{ comment.ID }}">reply
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters">
+		<div class="col" style="flex: 0 0 90px"></div>
+		<div class="col">
+			<div class="ml-3">
+				<section
+					class="comment-box">
+
+					<!-- child comments -->
+					{% if post.comments %}
+						<h4 class="sr-only">
+							replies
+						</h4>
+						<div class="comments">
+							{% for cmt in comment.children %}
+								{% include "comment.twig" with {comment:cmt} %}
+							{% endfor %}
+						</div>
+					{% endif %}
+
+					{% if comment.children %}
+						<button type="button" class="btn btn-primary btn-sm mb-3" data-toggle="collapse" data-target="#comment-form-{{ comment.ID }}" aria-expanded="false" aria-controls="comment-form-{{ comment.ID }}">Add a comment</button>
+					{% endif %}
+
+					<!-- comment form -->
+					{% include "comment-form.twig" %}
+
+				</section>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+{# see `archive.twig` for an alternative strategy of extending templates #}
+{% extends "base.twig" %}
+
+{% block content %}
+	{# see `base.twig:27` for where this block's content will be inserted #}
+	<h1 class="my-5">{{title}}</h1>
+	<div class="row mt-5">
+		{% for post in posts %}
+			<div class="col col-12 col-md-4 mb-4">
+				{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+			</div>
+		{% endfor %}
+
+	</div>
+	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+
+{% endblock %}

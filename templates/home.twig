@@ -1,0 +1,34 @@
+{# This file demonstrates using most of the index.twig template and modifying
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "index.twig" %}
+
+{% block content %}
+	<h1 class="my-5">Categories</h1>
+
+	<div class="row row-cols-1 row-cols-md-3">
+		{% for category in categories %}
+			<div class="col mb-4">
+				<div class="card h-100">
+					<a href="{{ category.link }}" class="card-header text-decoration-none">
+						<h5 class="card-title mb-1">{{category.name}}</h5>
+						<p class="mb-0 text-secondary">{{category.description}}</p>
+					</a>
+					<div class="list-group list-group-flush flex-grow-1">
+						{% for post in category.posts | slice(0, 5) %}
+							<a class="list-group-item list-group-item-action" href="{{ post.link }}">
+								{{ post.title }}
+							</a>
+						{% endfor %}
+					</div>
+					<a href="{{ category.link }}" class="card-footer">
+						Show all posts
+					</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+	<h1 class="my-5">Latest posts</h1>
+	{{parent()}}
+{% endblock %}

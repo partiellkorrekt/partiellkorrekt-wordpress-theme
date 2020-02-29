@@ -1,0 +1,10 @@
+<div class="list-group list-group-flush">
+	{% for category in categories if category.posts %}
+		<a href="{{ category.link }}" class="list-group-item list-group-item-action{% if category.slug == active  %} active{% endif %}">{{ category.title }}</a>
+		{% if category.children %}
+			<div class="cat-indent">
+				{% include "partial/category-tree.twig" with {categories:category.children} %}
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>

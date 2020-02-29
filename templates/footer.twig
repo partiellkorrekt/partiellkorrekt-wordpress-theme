@@ -1,0 +1,44 @@
+<section class="bg-light text-secondary my-0 mt-5 pt-5">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h4 class="title is-4 has-text-light">About this page</h4>
+				<div class="content">
+					<p>This page contains a selection of the notes, I'm taking.</p>
+					<p>If you are involved in (web-) development, I hope you find some notes helpful.</p>
+				</div>
+			</div>
+			<div class="col"></div>
+			<div class="col"></div>
+			<div class="col"></div>
+		</div>
+	</div>
+	<div class="bg-dark text-light mt-5 py-1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-md-6 py-2">
+					{% block footer %}
+						<b>Copyright &copy;
+							{{ "now"|date("Y") }}
+							Abraham Przewodnik
+						</b>
+					{% endblock %}
+				</div>
+				<div class="col-12 col-md-6">
+					<ul class="nav nav-flush justify-content-md-end">
+						{% for item in legal_menu.items %}
+							<li class="nav-item{% if item.current_item_ancestor or item.current %} active{% endif %}">
+								<a class="nav-link text-white" href="{{ item.link }}">{{ item.title }}
+									{% if item.current_item_ancestor or item.current %}
+										<span class="sr-only">(current)</span>
+									{% endif %}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

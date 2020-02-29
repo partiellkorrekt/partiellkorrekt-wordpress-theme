@@ -1,0 +1,15 @@
+<nav aria-label="Pagination" role="navigation">
+	<ul class="pagination pagination-lg justify-content-center mt-4 mb-5">
+		{% if posts.pagination.prev %}
+			<li class="page-item">
+				<a href="{{posts.pagination.prev.link}}" class="page-link {{posts.pagination.prev.link|length ? '' : 'invisible'}} ">Previous page</a>
+			</li>
+
+		{% endif %}
+		{% if posts.pagination.next %}
+			<li class="page-item">
+				<a href="{{posts.pagination.next.link}}" class="page-link {{posts.pagination.next.link|length ? '' : 'invisible'}}">Next page</a>
+			</li>
+		{% endif %}
+	</ul>
+</nav>

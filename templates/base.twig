@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js no-svg" {{ site.language_attributes }}>
+	{% block html_head_container %}
+		{% include 'html-header.twig' %}
+		<head>
+			{% block head %}{% endblock %}
+		</head>
+	{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<a class="skip-link sr-only" href="#content">{{ _e( 'Skip to content') }}</a>
+
+		<header class="header shadow">
+			<nav class="navbar navbar-expand-md navbar-light bg-light">
+				<a class="navbar-brand" href="/">
+					<b>Partiell</b>korrekt</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav ml-auto">
+						{% for item in primary_menu.items %}
+							<li class="nav-item{% if item.current_item_ancestor or item.current %} active{% endif %}">
+								<a class="nav-link" href="{{ item.link }}">{{ item.title }}
+									{% if item.current_item_ancestor or item.current %}
+										<span class="sr-only">(current)</span>
+									{% endif %}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</nav>
+		</body>
+	</body>
+</html></body></html></header>{% block header %}<section class="jumbotron text-center" style="background-image: url('{{ theme.theme_mod('header_image')}}')"><div class="container text-white">
+<h1 class="jumbotron-heading text-white">Don't know where to look?</h1>
+<p class="lead">You can search all my notes here</p>
+
+<div class="row mt-5">
+	<form class="form col-md-8 mx-auto" action="/">
+		<div class="input-group">
+			<input class="form-control form-control-lg" type="text" placeholder="Enter your search query…" value="{{ query }}" aria-label="Search" name="s">
+			<div class="input-group-append">
+				<button class="btn btn-lg btn-primary" type="submit">Search</button>
+			</div>
+		</div>
+	</form>
+</div></div></section>{% endblock %}<div id="content" role="main"><div class="section"><div class="container">
+{% block content %}
+	Sorry, no content
+{% endblock %}</div></div></div>{% block footer %}<footer id="footer">{% include 'footer.twig' %}</footer>{{ function('wp_footer') }}{% endblock %}</body></html>
