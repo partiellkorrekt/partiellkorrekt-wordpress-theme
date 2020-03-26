@@ -25,6 +25,9 @@ function pk_get_embedded_files($id)
       }
     }
   }
+  if (count($result) < 2) {
+    return [];
+  }
   ksort($result);
   return $result;
 }
