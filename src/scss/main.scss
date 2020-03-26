@@ -2,14 +2,14 @@
   font-size: 16px;
 }
 
-@import "variables";
-@import "~bootstrap/scss/bootstrap.scss";
-@import "~highlight.js/scss/atom-one-dark.scss";
+@import 'variables';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~highlight.js/scss/atom-one-dark.scss';
 
-$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+$fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
 
 .wp-block-code {
   background-color: #282c34;
@@ -19,7 +19,7 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
   color: #fff;
 
   &::before {
-    content: "asd" attr('data-language-mode');
+    content: 'asd' attr('data-language-mode');
   }
 
   pre {
@@ -99,14 +99,55 @@ a.card {
 }
 
 .article-body {
-  > h1, h2, h3, h4, h5, h6 {
+  > h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-top: 3rem;
     margin-bottom: 1rem;
-    +h1, +h2, +h3, +h4, +h5, +h6 {
+    + h1,
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
       margin-top: -1rem;
     }
     &:first-child {
       margin-top: 0;
+    }
+  }
+}
+
+.code-block .wp-block-code {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+ul.file-list {
+  margin-bottom: 0;
+  list-style: none;
+  padding: 0 0 0 0;
+
+  li {
+    padding-left: 1.5rem;
+    position: relative;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    .fas {
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+      width: 1rem;
+      text-align: center;
+    }
+
+    ul {
+      border-left: 1px solid rgba($body-color, 0.5);
+      padding-left: 1rem;
+      margin-left: -1rem;
     }
   }
 }

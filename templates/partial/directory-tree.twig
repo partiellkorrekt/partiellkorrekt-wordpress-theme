@@ -1,0 +1,16 @@
+<ul class="file-list">
+	{% for file in files %}
+		{% if (file.type == "folder") %}
+			<li>
+				<i class="fas fa-folder"></i>
+				{{file.name}}
+				{% include "partial/directory-tree.twig" with {files: file.children} %}
+			</li>
+		{% else %}
+			<li>
+				<i class="fas fa-file-code"></i>
+				{{file.name}}
+			</li>
+		{% endif %}
+	</li>
+{% endfor %}</ul>

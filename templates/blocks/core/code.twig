@@ -1,0 +1,15 @@
+<div class="card bg-dark text-white code-block my-4">
+	<div class="card-header d-flex flex-row align-items-start px-3">
+		<div class="flex-grow-1">
+			{{data['filename']}}
+		</div>
+		<div class="badge badge-warning mt-1">{{data['languageMode']}}</div>
+	</div>
+	{{innerHTML}}
+	<div class="card-footer text-right px-3">
+		<button class="btn btn-dark btn-sm js-copy">
+			<i class="fas fa-copy mr-1"></i>
+			<span>copy to clipboard</span>
+		</button>
+	</div>
+</div>
