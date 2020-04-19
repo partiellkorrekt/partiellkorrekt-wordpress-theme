@@ -10,3 +10,9 @@ Timber::$dirname = array('templates', 'views');
  * No prob! Just set this value to true
  */
 Timber::$autoescape = false;
+
+add_filter('timber/context', function ($context) {
+  $context['footer_widgets'] = Timber::get_widgets('footer');
+
+  return $context;
+});

@@ -12,3 +12,13 @@ add_filter('timber/context', function ($context) {
   // $context['site'] = $this;
   return $context;
 });
+
+add_action('widgets_init', function () {
+  register_sidebar([
+    'name' => 'Footer',
+    'id' => 'footer',
+    'description' => 'Widgets to show in the footer',
+    'before_widget' => '<div id="%1$s" class="col col-md-3 widget %2$s">',
+    'after_widget' => "</div>\n"
+  ]);
+});

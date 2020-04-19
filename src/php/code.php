@@ -16,7 +16,7 @@ function pk_get_embedded_files($id)
   foreach ($blocks as $block) {
     if ($block['blockName'] === 'core/code') {
       $data = pk_get_block_meta($block);
-      if ($data['filename']) {
+      if ($data['filename'] ?? '') {
         if ($result[$data['filename']] ?? '') {
           $result[$data['filename']] .= "\n" . $data['code'];
         } else {

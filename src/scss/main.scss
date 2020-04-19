@@ -151,3 +151,55 @@ ul.file-list {
     }
   }
 }
+
+#menu-social-media {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 0;
+
+  a {
+    display: block;
+    height: 2rem;
+    text-decoration: none;
+    position: relative;
+    padding-left: 1.5rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      width: 1rem;
+      text-align: center;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '#{$fa-var-globe}';
+    }
+
+    &[href^="https://facebook.com"]::before,
+    &[href^="https://www.facebook.com"]::before {
+      font-family: 'Font Awesome 5 Brands';
+      content: '#{$fa-var-facebook}';
+    }
+
+    &[href^="https://linkedin.com"]::before,
+    &[href^="https://www.linkedin.com"]::before {
+      font-family: 'Font Awesome 5 Brands';
+      content: '#{$fa-var-linkedin}';
+    }
+
+    &[href^="https://github.com"]::before,
+    &[href^="https://www.github.com"]::before {
+      font-family: 'Font Awesome 5 Brands';
+      content: '#{$fa-var-github}';
+    }
+
+    &[href^="https://instagram.com"]::before,
+    &[href^="https://www.instagram.com"]::before {
+      font-family: 'Font Awesome 5 Brands';
+      content: '#{$fa-var-instagram}';
+    }
+  }
+}
