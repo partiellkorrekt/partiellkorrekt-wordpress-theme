@@ -37,6 +37,6 @@
     "clipboard-polyfill": "^2.8.6",
     "highlight.js": "^9.18.1",
     "jquery-match-height": "^0.7.2",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   }
 }
