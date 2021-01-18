@@ -16,7 +16,7 @@ $context['post'] = $timber_post;
 $files = pk_get_embedded_files_and_folders($timber_post->ID);
 $context['hasFiles'] = count($files) > 0;
 $context['files'] = $files;
-$context['filesUrl'] = '/wp-json/partiellkorrekt/v1/code/' . $timber_post->slug . '.zip';
+$context['filesUrl'] = get_home_url() . '/wp-json/partiellkorrekt/v1/code/' . $timber_post->slug . '.zip';
 
 if (post_password_required($timber_post->ID)) {
   Timber::render('single-password.twig', $context);

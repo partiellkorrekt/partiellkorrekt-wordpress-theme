@@ -54,6 +54,7 @@ function pk_get_embedded_files_and_folders($id)
 add_action('rest_api_init', function () {
   register_rest_route('partiellkorrekt/v1', '/code/(?P<slug>[^\/]+)\.zip', array(
     'methods' => 'GET',
+    'permission_callback' => '__return_true',
     'callback' => function (\WP_REST_Request $request) {
       $slug = $request->get_param('slug');
       $posts = get_posts(['name' => $slug]);
