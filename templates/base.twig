@@ -32,22 +32,38 @@
 					</ul>
 				</div>
 			</nav>
-		</body>
-	</body>
-</html></body></html></header>{% block header %}<section class="jumbotron text-center" style="background-image: url('{{ theme.theme_mod('header_image')}}')"><div class="container text-white">
-<h1 class="jumbotron-heading text-white">Don't know where to look?</h1>
-<p class="lead">You can search all my notes here</p>
+		</header>
+		{% block header %}
+			<section class="jumbotron text-center" style="background-image: url('{{ theme.theme_mod('header_image')}}')">
+				<div class="container text-white">
+					<h1 class="jumbotron-heading text-white">Don't know where to look?</h1>
+					<p class="lead">You can search all my notes here</p>
 
-<div class="row mt-5">
-	<form class="form col-md-8 mx-auto" action="/">
-		<div class="input-group">
-			<input class="form-control form-control-lg" type="text" placeholder="Enter your search query…" value="{{ query }}" aria-label="Search" name="s">
-			<div class="input-group-append">
-				<button class="btn btn-lg btn-primary" type="submit">Search</button>
+					<div class="row mt-5">
+						<form class="form col-md-8 mx-auto" action="/">
+							<div class="input-group">
+								<input class="form-control form-control-lg" type="text" placeholder="Enter your search query…" value="{{ query }}" aria-label="Search" name="s">
+								<div class="input-group-append">
+									<button class="btn btn-lg btn-primary" type="submit">Search</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		{% endblock %}
+		<div id="content" role="main">
+			<div class="section">
+				<div class="container">
+					{% block content %}
+						Sorry, no content
+					{% endblock %}
+				</div>
 			</div>
 		</div>
-	</form>
-</div></div></section>{% endblock %}<div id="content" role="main"><div class="section"><div class="container">
-{% block content %}
-	Sorry, no content
-{% endblock %}</div></div></div>{% block footer %}<footer id="footer">{% include 'footer.twig' %}</footer>{{ function('wp_footer') }}{% endblock %}</body></html>
+		{% block footer %}
+			<footer id="footer">{% include 'footer.twig' %}</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>
